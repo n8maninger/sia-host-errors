@@ -9,19 +9,6 @@ Your wallet is locked or scanning. Unlock your wallet or wait for it to finish s
 ## not enough storage remaining to accept sector
 One or more of your host storage folders is inaccessible. Check your storage folders and make sure they are visible to Sia
 
-# Renter/Host Communication Issues
-These are purely informational and occur during communication with renters.
-
-## challenge signature is invalid
-Occurs when the renter fails to prove that they own the contract they are trying to update. 
-
-## bad signature from renter: invalid signature
-Occurs when the renter fails to prove that they own the contract they are trying to update. 
-
-## length 1234 exceeds maxLen of
-## encoded object exceeded allocation limit by
-Occurs when the renter has sent more data than expected  
-
 # Price Table Log Items
 Price tables are an agreement between the host and a renter to transact at a certain price. The price table is valid for 10 minutes, after which the renter must update their price table. In most cases these do not indicate an issue with your host.
 
@@ -182,6 +169,21 @@ This occurs when a renter submits an update to a registry entry with the same re
 
 ## provided signature is invalid
 This occurs when a renter submits an update to the registry entry with an invalid signature, indicating someone is trying to update the entry using the wrong key.
+
+# Renter/Host Communication Issues
+These are purely informational and occur during communication with renters.
+
+## challenge signature is invalid
+Occurs when the renter fails to prove that they own the contract they are trying to update. 
+
+## bad signature from renter: invalid signature
+Occurs when the renter fails to prove that they own the contract they are trying to update. 
+
+## length 1234 exceeds maxLen of
+Occurs when the renter has sent more data than expected  
+
+## encoded object exceeded allocation limit by
+Occurs when the renter has sent more data than expected
 
 # Generic Communication Errors
 The errors below will make up most of the log lines. They are safe to ignore for the most part, but are included for completeness.
