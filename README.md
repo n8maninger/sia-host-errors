@@ -1,4 +1,5 @@
 # Important Log Items
+These log items indicate an issue with your host and should be fixed immediately for the health of your host
 
 ## host has reached its collateral budget and cannot accept the file contract
 Your host has reached its maximum collateral budget. Restart Sia to clear stale contracts or increase collateral budget
