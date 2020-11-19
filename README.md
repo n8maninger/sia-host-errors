@@ -7,10 +7,7 @@ Your host has reached its maximum collateral budget. Restart Sia to clear stale 
 Your wallet is locked or scanning. Unlock your wallet or wait for it to finish scanning
 
 ## not enough storage remaining to accept sector
-One or more of your host storage folders is inaccessible
-
-### Resolution
-+ Check your storage folders and make sure they are visible to Sia
+One or more of your host storage folders is inaccessible. Check your storage folders and make sure they are visible to Sia
 
 # Renter/Host Communication Issues
 These are purely informational and occur during communication with renters.
