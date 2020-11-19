@@ -22,7 +22,7 @@ The renter tried to use a price table unknown to the host. This can occur if the
 The log lines below can occur when renters and hosts revise the file contract. In most cases these do not indicate an issue with your host.
 
 ## the requested file contract is currently locked
-To revise a contract it has to be locked, a renter attempted to use a file contract that was already locked. This could inidicate failure to unlock a contract after disconnect, but it's more likely an issue from the renter.
+To revise a contract it has to be locked, a renter attempted to use a file contract that was already locked. This could indicate failure to unlock a contract after disconnect, but it's more likely an issue from the renter.
 
 ## renter has provided an incorrectly sized sector
 The renter tried to upload a sector that did not match the host's sector size \[4MiB\]
