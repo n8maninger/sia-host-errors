@@ -19,6 +19,15 @@ The renter tried to use a price table, but it had already expired.
 ## Price table not found
 The renter tried to use a price table unknown to the host. This can occur if the renter did not pay for the price table update.
 
+# Contract State Log Items
+These log items indicate lifecycle events for contracts. A storage contract has 3 lifecycle events: creation, revision, and finalization. Creation occurs when the renter and host agree to create a storage contract and lock allowance and collateral into it. Revision occurs when the renter and host agree to revise the contract through upload, download, or funding an ephemeral account. Finalization occurs when the renter or host submits the final revision to the blockchain, indicating the contract will no longer be updated. After finalization, during the contract's proof window, a host can determine whether a storage proof needs to be submitted. If the host submits a valid storage proof the contract's valid proof outputs are created, otherwise the missed outputs are created. There are situations where it is not in the host's best interest to submit a storage proof, so not submiting a proof does not necessarily indicate failure.
+
++ file contract complete, id 
++ No need to submit a storage proof for the contract. Revenue is
++ Successfully submitted a storage proof. Revenue is
++ No need to submit a storage proof the contract. Revenue is
++ Missed storage proof. Revenue would have been
+
 ## File Contract Log Items
 The log lines below can occur when renters and hosts revise the file contract. In most cases these do not indicate an issue with your host.
 
@@ -42,17 +51,6 @@ Occurs if the renter tried to request a section of a sector that is greater than
 
 # Contract Revision Log Items
 Both the renter and the host must agree and sign a contract revision for it to be valid, these occur when the renter and the host have a dispute on one of those revisions. They usually occurs if the renter and host are on different block heights.
-
-A storage contract has 3 lifecycle events: creation, revision, and finalization. Creation occurs when the renter and host agree to create a storage contract and lock allowance and collateral into it. Revision occurs when the renter and host agree to revise the contract through upload, download, or funding an ephemeral account. Finalization occurs when the renter or host submits the final revision to the blockchain, indicating the contract will no longer be updated. After finalization, during the contract's proof window, a host can determine whether a storage proof needs to be submitted. If the host submits a valid storage proof the contract's valid proof outputs are created, otherwise the missed outputs are created. There are situations where it is not in the host's best interest to submit a storage proof, so not submiting a proof does not necessarily indicate failure.
-
-### Valid Proof Outputs
-+ Renter returned allowance
-+ Host revenue + returned collateral
-
-### Missed Proof Outputs
-+ Renter returned allowance
-+ Host returned collateral
-+ Renter burned allowance + host burned collateral
 
 ## renter is requesting revision after the revision deadline
 The renter has tried to revise a contract after it has expired and during the proof period.
@@ -95,18 +93,6 @@ This occurs if the file contract's duration is longer than the host's max durati
 
 ## file contract proposal expects the host to pay more than the maximum allowed collateral
 This occurs when a renter attempts to lock more collateral into a single contract then the host allows. Adjusting `maxcollateral` may reduce the occurence, but your host may lock more funds into contracts that aren't necessarily going to be used. About 4TB worth of collateral is a good maximum.
-
-# Contract State Logs
-
-## file contract complete, id 
-
-## No need to submit a storage proof for the contract. Revenue is
-
-## Successfully submitted a storage proof. Revenue is
-
-## No need to submit a storage proof the contract. Revenue is
-
-## Missed storage proof. Revenue would have been
 
 # Ephemeral Account Logs
 Ephemeral accounts are used for quicker interactions between a renter and host. The renter funds an ephemeral account using a file contract, after funding the ephemeral account can be used to transact with the host without needing to update or lock the file contract allowing for high parallelism and better performance.
