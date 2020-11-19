@@ -1,17 +1,10 @@
 # Important Log Items
 
 ## host has reached its collateral budget and cannot accept the file contract
-Your host has reached its maximum collateral budget
-
-### Resolution
-+ Restart Sia to clear stale contracts
-+ Increase collateral budget
+Your host has reached its maximum collateral budget. Restart Sia to clear stale contracts or increase collateral budget
 
 ## wallet must be unlocked before it can be used
-Your wallet is locked or scanning
-
-### Resolution
-+ Unlock your wallet or wait for it to finish scanning
+Your wallet is locked or scanning. Unlock your wallet or wait for it to finish scanning
 
 ## not enough storage remaining to accept sector
 One or more of your host storage folders is inaccessible
@@ -23,6 +16,8 @@ One or more of your host storage folders is inaccessible
 These are purely informational and occur during communication with renters.
 
 ## challenge signature is invalid
+Occurs when the renter fails to prove that they own the contract they are trying to update. 
+
 ## bad signature from renter: invalid signature
 Occurs when the renter fails to prove that they own the contract they are trying to update. 
 
